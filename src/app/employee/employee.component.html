@@ -1,0 +1,17 @@
+<p>Befor employee component</p>
+
+
+<a [routerLink]="['list']" [routerLinkActive]="'active'">List</a> <br>
+<a [routerLink]="['create']" [routerLinkActive]="'active'">Create</a> <br>
+<a [routerLink]="['update']" [routerLinkActive]="'active'">Update</a> <br>
+<a [routerLink]="['update',{id:1}]" [routerLinkActive]="'active'">Update;id=1</a> <br>
+
+<a [routerLink]="['update',1]" [routerLinkActive]="'active'">Update/1</a> <br> <!-- update/1  ==> update;id=1 -->
+<a [routerLink]="['update',1, 'atallah']" [routerLinkActive]="'active'">Update/1/Atallah</a> <br>
+
+<button (click)="goToHome()"> Go to home</button>
+
+
+<router-outlet></router-outlet>
+
+<p>After employee component</p>

@@ -1,0 +1,8 @@
+<div [ngSwitch]="getMarkEnum()">
+    <span *ngSwitchCase="ME.Excelent">Excelent</span>
+    <span *ngSwitchCase="ME.VeryGood">Very good!</span>
+    <span *ngSwitchCase="ME.Good">good!</span>
+    <span *ngSwitchCase="ME.Fair">Fair </span>
+    <span *ngSwitchCase="ME.Fail">Fail </span>
+    <span *ngSwitchDefault>not valid!</span>
+</div>

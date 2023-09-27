@@ -1,0 +1,87 @@
+Value binding {{title}}
+
+<button (click)="changeTitle('new title')">Change to new title</button>
+<button (click)="changeTitle('second title')">Change to second title</button>
+
+
+<input [value]="title">
+
+<app-child [(title)]="title"></app-child>
+
+<h1 *ngIf="showWarningMsg"> Warning msg </h1>
+
+<h1 *ngIf="names"> Conditions </h1>
+
+<input #empName (change)="userName=empName.value" />
+
+<h1 *ngIf="userName; else GuestWelcome"> Welcome, {{userName}} </h1>
+
+<ng-template #GuestWelcome>Welcome, Guest</ng-template>
+
+
+
+
+
+<button (click)="showWarningMsg = !showWarningMsg">Show/Hide</button>
+
+<ul>
+    <li *ngFor="let name of names, let i=index, let isOdd=odd" [ngClass]="isOdd?'oddLi':''">{{i+1}} {{isOdd}} - {{name}}
+    </li>
+</ul>
+
+<input [appTest]="'gray'" #colorInput [value]="color" (change)="color=colorInput.value">
+{{color}}
+<ul [appHighlight]="color" [isBold]="true">
+    <li *ngFor="let name of names, let i=index, let isOdd=odd" [ngClass]="{'oddLi testClass':isOdd}">
+        {{i+1}}
+        {{isOdd}} - {{name}}
+    </li>
+</ul>
+
+<ul>
+    <li *ngFor="let name of names, let i=index, let isOdd=odd" class="testClass" [class.oddLi]="isOdd">{{i+1}}
+        {{isOdd}} - {{name}}
+    </li>
+</ul>
+
+
+
+<app-student-mark [mark]="90"></app-student-mark>
+<app-student-mark [mark]="89"></app-student-mark>
+
+<table>
+    <thead>
+        <tr>
+            <th>Fullname</th>
+            <th>mark</th>
+            <th>Evaluation</th>
+            <th>Remarks</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of students">
+            <td>
+                {{student.fullName}}
+            </td>
+            <td>
+                {{student.mark}}
+            </td>
+            <td>
+                <app-student-mark-evaluatio [mark]="student.mark"></app-student-mark-evaluatio>
+
+            </td>
+            <td>
+                <app-student-mark [mark]="student.mark"></app-student-mark>
+
+            </td>
+        </tr>
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tfoot>
+</table>

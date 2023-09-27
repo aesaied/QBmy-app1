@@ -1,0 +1,10 @@
+<div style="color: yellow;" *ngIf="mark>=90 && mark<100; then excelent  else elseMarkCond">
+    <h1>Excelent work!!!</h1>
+</div>
+
+<ng-template #excelent>
+    <h1>Excelent work!!!</h1>
+</ng-template>
+<ng-template #elseMarkCond>
+    <h1> Your mark less than 90! </h1>
+</ng-template>
