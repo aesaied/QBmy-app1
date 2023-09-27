@@ -12,7 +12,7 @@ export class NewStudentsService {
 
     console.log(`API_URL = ${apiUrl}`);
 
-    alert(injector.get(API_TOKEN));
+    //alert(injector.get(API_TOKEN));
 
   }
   students: Student[] = [];

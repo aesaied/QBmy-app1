@@ -17,6 +17,11 @@ export class StudentListComponent implements OnInit {
 
   }
 
+
+  addToList(student: Student) {
+    this.students.push(student);
+  }
+
   ngOnInit() {
     this.students = this.studentService.getAll();
   }

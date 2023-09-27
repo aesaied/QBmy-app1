@@ -1,3 +1,5 @@
+<app-student-create (onCreateStudent)="addToList($event)"></app-student-create>
+
 <ul>
     <li *ngFor="let student of students">
         <a [routerLink]="['/student','view',student.fullName]">

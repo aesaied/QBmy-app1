@@ -1,0 +1,21 @@
+<p>Create new student</p>
+
+<form #f="ngForm" (ngSubmit)="submit(f)">
+
+    <input #firstName="ngModel" minlength="3" ngModel required type="text" name="fullName"
+        placeholder="fullName (i.e Atallah Esaied)">
+
+    Welcome, {{firstName.value}}
+
+    <input ngModel type="text" name="city" placeholder="city ">
+
+    <input ngModel required type="number" name="mark" placeholder="mark">
+
+    <button [disabled]="!firstName.valid" type="submit">Submit</button>
+
+</form>
+
+{{ f.value | json}}
+{{ f.valid}}
+
+{{ f.dirty}}

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +22,7 @@ import { StudentListComponent } from './student-list/student-list.component';
 import { StudentViewComponent } from './student-view/student-view.component';
 import { NewStudentsService } from './Services/new-students.service';
 import { API_TOKEN } from './MyAppTokens';
+import { StudentCreateComponent } from './student-create/student-create.component';
 
 @NgModule({
   declarations: [
@@ -39,11 +41,12 @@ import { API_TOKEN } from './MyAppTokens';
     EmployeeComponent,
     OldComponent,
     StudentListComponent,
-    StudentViewComponent
+    StudentViewComponent,
+    StudentCreateComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, FormsModule
   ],
   providers: [{ provide: StudentsService, useClass: NewStudentsService }
     , { provide: 'API_URL', useValue: 'http://localhost:1234' }
