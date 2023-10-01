@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +24,7 @@ import { StudentViewComponent } from './student-view/student-view.component';
 import { NewStudentsService } from './Services/new-students.service';
 import { API_TOKEN } from './MyAppTokens';
 import { StudentCreateComponent } from './student-create/student-create.component';
+import { TReactiveFormComponent } from './t-reactive-form/t-reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -42,11 +44,12 @@ import { StudentCreateComponent } from './student-create/student-create.componen
     OldComponent,
     StudentListComponent,
     StudentViewComponent,
-    StudentCreateComponent
+    StudentCreateComponent,
+    TReactiveFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, FormsModule
+    AppRoutingModule, FormsModule, ReactiveFormsModule
   ],
   providers: [{ provide: StudentsService, useClass: NewStudentsService }
     , { provide: 'API_URL', useValue: 'http://localhost:1234' }

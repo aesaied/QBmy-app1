@@ -1,0 +1,30 @@
+<form [formGroup]="myForm">
+
+    <input formControlName="firstName">
+    <input formControlName="secondName">
+    <input formControlName="lastName">
+
+
+    <ng-container formArrayName="skills">
+        <ng-container *ngFor="let skill of skills; let i = index">
+            <div [formGroup]="skill">
+
+                <input formControlName="skill">
+                <input formControlName="level">
+                <button (click)="removeSkill(i)">Remove</button>
+
+            </div>
+        </ng-container>
+    </ng-container>
+
+
+    <button (click)="addNewSkill()">Add skill</button>
+
+
+
+
+    <button type="submit">Submit</button>
+
+</form>
+
+{{myForm}}

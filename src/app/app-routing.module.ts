@@ -11,6 +11,7 @@ import { EmployeeComponent } from './employee/employee.component';
 import { OldComponent } from './old/old.component';
 import { StudentListComponent } from './student-list/student-list.component';
 import { StudentViewComponent } from './student-view/student-view.component';
+import { TReactiveFormComponent } from './t-reactive-form/t-reactive-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -22,6 +23,8 @@ const routes: Routes = [
   },
 
   { path: 'old', component: OldComponent }
+  ,
+  { path: 'reactiveform', component: TReactiveFormComponent }
 
   ,
   {

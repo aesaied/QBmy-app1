@@ -9,7 +9,7 @@
 
     <input ngModel type="text" name="city" placeholder="city ">
 
-    <input ngModel required type="number" name="mark" placeholder="mark">
+    <input ngModel min="0" max="99" required type="number" name="mark" placeholder="mark">
 
     <button [disabled]="!firstName.valid" type="submit">Submit</button>
 
