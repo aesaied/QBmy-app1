@@ -25,6 +25,8 @@ import { NewStudentsService } from './Services/new-students.service';
 import { API_TOKEN } from './MyAppTokens';
 import { StudentCreateComponent } from './student-create/student-create.component';
 import { TReactiveFormComponent } from './t-reactive-form/t-reactive-form.component';
+import { ValidationMessageComponent } from './validation-message/validation-message.component';
+import { EnglisNameOnlyDirective } from './Validators/englis-name-only.directive';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { TReactiveFormComponent } from './t-reactive-form/t-reactive-form.compon
     StudentListComponent,
     StudentViewComponent,
     StudentCreateComponent,
-    TReactiveFormComponent
+    TReactiveFormComponent,
+    ValidationMessageComponent,
+    EnglisNameOnlyDirective
   ],
   imports: [
     BrowserModule,

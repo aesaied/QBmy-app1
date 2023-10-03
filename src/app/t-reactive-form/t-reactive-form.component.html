@@ -1,8 +1,15 @@
 <form [formGroup]="myForm">
 
     <input formControlName="firstName">
+
+    <app-validation-message [control]="myForm.controls['firstName']"></app-validation-message>
     <input formControlName="secondName">
+    <app-validation-message [control]="myForm.controls['secondName']"></app-validation-message>
+
     <input formControlName="lastName">
+
+    <app-validation-message [control]="myForm.controls['lastName']"></app-validation-message>
+
 
 
     <ng-container formArrayName="skills">
@@ -27,4 +34,4 @@
 
 </form>
 
-{{myForm}}
+{{myForm.controls['firstName'].errors| json}}

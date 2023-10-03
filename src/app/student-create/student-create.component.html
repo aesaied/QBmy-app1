@@ -2,12 +2,16 @@
 
 <form #f="ngForm" (ngSubmit)="submit(f)">
 
-    <input #firstName="ngModel" minlength="3" ngModel required type="text" name="fullName"
+    <input #firstName="ngModel" minlength="3" ngModel required EnglisNameOnly type="text" name="fullName"
         placeholder="fullName (i.e Atallah Esaied)">
+
+    <app-validation-message [control]="firstName.control"></app-validation-message>
 
     Welcome, {{firstName.value}}
 
-    <input ngModel type="text" name="city" placeholder="city ">
+    <input #city="ngModel" ngModel type="text" name="city" placeholder="city " EnglisNameOnly />
+    <app-validation-message [control]="city.control"></app-validation-message>
+
 
     <input ngModel min="0" max="99" required type="number" name="mark" placeholder="mark">
 

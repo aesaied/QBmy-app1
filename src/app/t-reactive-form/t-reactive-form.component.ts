@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { englishNameOnly } from '../Validators/myvalidators';
 
 @Component({
   selector: 'app-t-reactive-form',
@@ -42,11 +43,11 @@ export class TReactiveFormComponent {
   constructor(private fb: FormBuilder) {
 
 
-    var fName = fb.nonNullable.control('Atallah', [Validators.required, Validators.minLength(2)]);
+    var fName = fb.nonNullable.control('Atallah', [Validators.required, Validators.minLength(2), englishNameOnly()]);
     this.myForm = fb.group({
       firstName: fName,
-      secondName: fb.nonNullable.control('Abdallah', Validators.required),
-      lastName: fb.nonNullable.control('Isayed', Validators.required),
+      secondName: fb.nonNullable.control('Abdallah', [Validators.required, englishNameOnly()]),
+      lastName: fb.nonNullable.control('Isayed', [Validators.required, englishNameOnly()]),
 
       skills: fb.array([
 

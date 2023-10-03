@@ -1,0 +1,2 @@
+<div *ngIf="myForm.controls['firstName'].invalid && (myForm.controls['firstName'].dirty || myForm.controls['firstName'].touched)"
+class="alert"><div *ngIf="myForm.controls['firstName'].errors?.['required']">Please enter firstName </div><div *ngIf="myForm.controls['firstName'].errors?.['englishNameOnly']">Please enter valid english name </div><div *ngIf="myForm.controls['firstName'].errors?.['minlength']">first name must be at least 2 chars </div></div>
