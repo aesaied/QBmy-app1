@@ -12,6 +12,10 @@ import { OldComponent } from './old/old.component';
 import { StudentListComponent } from './student-list/student-list.component';
 import { StudentViewComponent } from './student-view/student-view.component';
 import { TReactiveFormComponent } from './t-reactive-form/t-reactive-form.component';
+import { TPipesComponent } from './tpipes/tpipes.component';
+import { PostListComponent } from './post-list/post-list.component';
+import { PostDetailsComponent } from './post-details/post-details.component';
+import { PostCreateComponent } from './post-create/post-create.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -19,6 +23,21 @@ const routes: Routes = [
   { path: 'aboutus', redirectTo: 'about-us', pathMatch: 'full' },
   {
     path: 'about-us', component: AboutUsComponent
+
+  },
+  {
+    path: 'pipes', component: TPipesComponent
+
+  },
+  {
+    path: 'posts', children: [
+      { path: '', component: PostListComponent },
+      { path: 'detail/:id', component: PostDetailsComponent },
+      { path: 'create', component: PostCreateComponent }
+
+
+
+    ]
 
   },
 

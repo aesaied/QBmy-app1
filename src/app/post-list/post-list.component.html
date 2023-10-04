@@ -1,0 +1,23 @@
+<p>post-list works!</p>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>title</th>
+            <!-- <th>body</th> -->
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let post of postList">
+            <td>
+                <a [routerLink]="['detail',post.id]"> {{post.title}}</a>
+            </td>
+            <!-- <td>{{post.body}}</td> -->
+        </tr>
+    </tbody>
+</table>
+
+
+{{ postList?.length }}

@@ -1,0 +1,21 @@
+<form #f="ngForm" (ngSubmit)="CreatePost(f.value)">
+    Title: <input ngModel name="title" required /> <br>
+    Body: <textarea ngModel name="body" required></textarea> <br>
+    User: <select ngModel required name="userId">
+        <option value="">--select--</option>
+        <option *ngFor="let user of users |async" [value]="user.id">
+
+            {{user.name}}
+        </option>
+
+    </select>
+    <br>
+
+
+    <button type="">Save</button>
+
+
+</form>
+
+
+{{ f.value | json}}

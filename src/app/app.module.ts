@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
+import { DEFAULT_CURRENCY_CODE, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -27,6 +27,11 @@ import { StudentCreateComponent } from './student-create/student-create.componen
 import { TReactiveFormComponent } from './t-reactive-form/t-reactive-form.component';
 import { ValidationMessageComponent } from './validation-message/validation-message.component';
 import { EnglisNameOnlyDirective } from './Validators/englis-name-only.directive';
+import { TPipesComponent } from './tpipes/tpipes.component';
+import { DATE_PIPE_DEFAULT_OPTIONS } from '@angular/common';
+import { PostListComponent } from './post-list/post-list.component';
+import { PostDetailsComponent } from './post-details/post-details.component';
+import { PostCreateComponent } from './post-create/post-create.component';
 
 @NgModule({
   declarations: [
@@ -49,15 +54,22 @@ import { EnglisNameOnlyDirective } from './Validators/englis-name-only.directive
     StudentCreateComponent,
     TReactiveFormComponent,
     ValidationMessageComponent,
-    EnglisNameOnlyDirective
+    EnglisNameOnlyDirective,
+    TPipesComponent,
+    PostListComponent,
+    PostDetailsComponent,
+    PostCreateComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, FormsModule, ReactiveFormsModule
+    AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule
   ],
   providers: [{ provide: StudentsService, useClass: NewStudentsService }
-    , { provide: 'API_URL', useValue: 'http://localhost:1234' }
+    , { provide: 'API_URL', useValue: 'https://jsonplaceholder.typicode.com/' }
     , { provide: API_TOKEN, useValue: 'http://localhost:9875' }
+    , { provide: DEFAULT_CURRENCY_CODE, useValue: 'EUR' }
+    , { provide: DATE_PIPE_DEFAULT_OPTIONS, useValue: { dateFormat: 'dd/MMM/yyyy' } }
+
 
   ],
   bootstrap: [AppComponent]

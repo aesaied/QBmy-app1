@@ -1,0 +1,27 @@
+<div *ngIf="post">
+
+
+    <p>{{post.title}}</p>
+
+    <div>
+        {{post.body}}
+    </div>
+
+</div>
+
+
+<div *ngIf="post==null">
+    Loading...
+</div>
+
+
+
+<button (click)="backToList()">Back to list</button>
+
+
+<a [routerLink]="['/posts','detail','9999']">Go to not found!</a>
+
+
+<!-- {{title}}
+
+<button (click)="changeTitle()"></button> -->
